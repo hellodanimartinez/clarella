@@ -6,7 +6,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <!-- HERO SECTION -->
   <section class="hero" id="hero">
     <div class="hero-bg">
-      <img src="/images/home/hero-bg.webp" alt="Panoramic view of Mas Clarella and vineyards" class="hero-bg-img" />
+      <div class="vimeo-wrapper">
+        <iframe 
+          src="https://player.vimeo.com/video/940919928?background=1&autoplay=1&loop=1&byline=0&title=0" 
+          frameborder="0" 
+          allow="autoplay; fullscreen; picture-in-picture" 
+          allowfullscreen
+          title="Clarella Background Video"
+        ></iframe>
+      </div>
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
@@ -147,13 +155,39 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     position: absolute;
     inset: 0;
     z-index: 0;
+    overflow: hidden;
+  }
+  
+  .vimeo-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
   }
 
-  .hero-bg-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 40%;
+  @media (min-aspect-ratio: 16/9) {
+    .vimeo-wrapper iframe {
+      width: 100vw;
+      height: 56.25vw;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @media (max-aspect-ratio: 16/9) {
+    .vimeo-wrapper iframe {
+      width: 177.78vh;
+      height: 100vh;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
   .hero-overlay {
