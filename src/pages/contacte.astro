@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="CONTACTE - Clarella" description="Contacta amb Mas Clarella — Ctra. Vidrà km 10, 08584, Barcelona" lang="ca">
+  <!-- Hero Banner -->
+  <section class="page-hero">
+    <div class="page-hero-bg">
+      <img src="/images/home/contacte.webp" alt="Contacte Clarella" class="page-hero-img" />
+      <div class="page-hero-overlay"></div>
+    </div>
+    <div class="page-hero-content">
+      <h1 class="page-hero-title text-uppercase">Contacte</h1>
+    </div>
+  </section>
+
+  <!-- Map & Contact Info -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid reveal">
+        <!-- Map -->
+        <div class="contact-map">
+          <h2 class="section-title">COM ARRIBAR</h2>
+          <p style="margin-bottom: var(--space-md); color: var(--color-text-muted);">Clica sobre el mapa i s'obrirà Google Maps</p>
+          <div class="map-wrapper">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.5!2d2.3144!3d42.0836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDLCsDA1JzAxLjAiTiAywrAxOCc1MS44IkU!5e0!3m2!1sca!2ses!4v1"
+              width="100%"
+              height="450"
+              style="border:0; border-radius: 2px;"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Ubicació de Mas Clarella"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="contact-details">
+            <p class="contact-item">
+              <span class="contact-label">T.</span>
+              <a href="tel:+34683602397">+34 683 60 23 97</a>
+            </p>
+            <p class="contact-item">
+              <a href="mailto:info@clarella.cat">info@clarella.cat</a>
+            </p>
+          </div>
+
+          <address class="contact-address">
+            <p><strong>Mas Clarella</strong></p>
+            <p>Ctra. Vidrà km 10</p>
+            <p>08584, Barcelona</p>
+          </address>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    position: relative;
+    height: 50vh;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .page-hero-bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  .page-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .page-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .page-hero-title {
+    color: var(--color-text-light);
+    font-size: var(--text-6xl);
+    letter-spacing: 0.1em;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+
+  .map-wrapper {
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .contact-info {
+    padding-top: var(--space-3xl);
+  }
+
+  .contact-details {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .contact-item {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-sm);
+  }
+
+  .contact-item a {
+    color: var(--color-text-dark);
+    transition: color var(--transition-fast);
+  }
+
+  .contact-item a:hover {
+    color: var(--color-accent-gold);
+  }
+
+  .contact-label {
+    color: var(--color-text-muted);
+    margin-right: 0.5rem;
+  }
+
+  .contact-address {
+    font-style: normal;
+    font-size: var(--text-base);
+    line-height: 1.8;
+    color: var(--color-text-body);
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+      padding-top: 0;
+    }
+
+    .page-hero-title {
+      font-size: var(--text-4xl);
+    }
+  }
+</style>

@@ -1,0 +1,323 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const FAREHARBOR_URL = 'https://fareharbor.com/embeds/book/clarellawines/?from-ssl=yes&ga=UA-206284799-1%2C267788612.1712174212%3B&ga4t=&g4=yes&cp=no&csp=no&back=https%3A%2F%2Fclarellawines.com%2Fes%2Fwine-tasting%2F&language=es-es&u=46a34fa2-7424-45ec-afbf-2d966a78f39e';
+---
+
+<BaseLayout title="ESDEVENIMENTS - Clarella" description="Visites guiades al mas amb tast de vins i maridatge. Experiències Orígens i Essencial." lang="ca">
+  <!-- Hero Banner -->
+  <section class="page-hero">
+    <div class="page-hero-bg">
+      <img src="/images/events/Clarella_unica-esdeveniments-copia.webp" alt="Esdeveniments a Clarella" class="page-hero-img" />
+      <div class="page-hero-overlay"></div>
+    </div>
+    <div class="page-hero-content">
+      <h1 class="page-hero-title text-uppercase">Visites i Maridatges</h1>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="section section--cream">
+    <div class="container container--narrow text-center">
+      <div class="reveal">
+        <p class="events-intro">
+          Mas Clarella és obert als amants del vi, la història i la bellesa. Els caps de setmana es fan visites guiades al mas, amb tast de vins i maridatge. Coneixereu la història d'aquest extraordinari racó del nord de la comarca d'Osona i gaudireu dels seus vins, maridats amb productes de la terra. Vins blancs i negres, formatges, embotits i pernils que despertaran els vostres sentits.
+        </p>
+        <h3 class="events-cta-title" style="margin-top: var(--space-xl);">PROGRAMEU LA VOSTRA EXPERIÈNCIA A CLARELLA</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiences -->
+  <section class="section">
+    <div class="container">
+      <div class="experiences-grid">
+        <!-- ORÍGENS -->
+        <div class="experience-card reveal">
+          <div class="experience-header">
+            <h2 class="experience-name">ORÍGENS</h2>
+          </div>
+          <div class="experience-body">
+            <ul class="experience-features">
+              <li>Visita guiada a les nostres vinyes de muntanya, on expliquem com treballem la vinya en alçada, els reptes que comporta i com això influeix en la qualitat i personalitat del vi.</li>
+              <li>Visita guiada al Mas Clarella, un mas amb segles d'història, on coneixereu el patrimoni arquitectònic de la finca i la història familiar dels Clarella.</li>
+              <li>Tast maridatge amb <strong>3 vins joves + 2 vins reserva o Premium</strong> (segons temporada), acompanyats d'una taula de formatges artesans, embotits i pa de coca.</li>
+            </ul>
+            <div class="experience-pricing">
+              <p class="price"><span class="price-label">Adults +18:</span> <span class="price-value">39,00€</span></p>
+              <p class="price"><span class="price-label">de 6 a 18 anys:</span> <span class="price-value">12,00€</span></p>
+            </div>
+            <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer" class="btn btn--gold experience-btn">
+              RESERVA ARA
+            </a>
+          </div>
+        </div>
+
+        <!-- ESSENCIAL -->
+        <div class="experience-card reveal" style="transition-delay: 0.15s;">
+          <div class="experience-header">
+            <h2 class="experience-name">ESSENCIAL</h2>
+          </div>
+          <div class="experience-body">
+            <ul class="experience-features">
+              <li>Visita guiada a les nostres vinyes de muntanya, on expliquem com treballem la vinya en alçada, els reptes que comporta i com això influeix en la qualitat i personalitat del vi.</li>
+              <li>Visita guiada al Mas Clarella, un mas amb segles d'història, on coneixereu el patrimoni arquitectònic de la finca i la història familiar dels Clarella.</li>
+              <li>Tast de <strong>tres vins joves</strong> del celler, maridat amb un pica-pica de productes locals com fuet artesà i formatge, per arrodonir l'experiència amb els sabors de la nostra terra.</li>
+            </ul>
+            <div class="experience-pricing">
+              <p class="price"><span class="price-label">Adults +18:</span> <span class="price-value">25,00€</span></p>
+              <p class="price"><span class="price-label">de 6 a 18 anys:</span> <span class="price-value">12,00€</span></p>
+            </div>
+            <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer" class="btn btn--gold experience-btn">
+              RESERVA ARA
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Info Section -->
+  <section class="section section--cream">
+    <div class="container">
+      <div class="info-grid reveal">
+        <div class="info-item">
+          <h4 class="info-label">DURACIÓ</h4>
+          <p>2 Hores</p>
+        </div>
+        <div class="info-item">
+          <h4 class="info-label">IDIOMA</h4>
+          <p>Català, Castellà.<br/><strong>*Anglès, *Francès.</strong><br/>(*reservar per email: <a href="mailto:info@clarella.cat">info@clarella.cat</a>)</p>
+        </div>
+        <div class="info-item">
+          <h4 class="info-label">ACCESSIBILITAT</h4>
+          <p>Totes les activitats són accessibles en cadira de rodes excepte la visita a la casa pairal</p>
+        </div>
+        <div class="info-item">
+          <h4 class="info-label">CONFIRMA LA TEVA RESERVA</h4>
+          <p><a href="tel:+34683602397">683 602 397</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="section section--dark">
+    <div class="container container--narrow text-center">
+      <div class="reveal">
+        <h2 class="section-title text-uppercase">Com Arribar</h2>
+        <p style="margin-bottom: var(--space-lg);">Clica sobre el mapa i s'obrirà Google Maps</p>
+        <div class="map-container">
+          <a href="https://www.google.com/maps/place/Mas+Clarella/@42.0836,2.3144,15z" target="_blank" rel="noopener noreferrer">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.5!2d2.3144!3d42.0836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDLCsDA1JzAxLjAiTiAywrAxOCc1MS44IkU!5e0!3m2!1sca!2ses!4v1"
+              width="100%"
+              height="400"
+              style="border:0; border-radius: 2px;"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Ubicació de Mas Clarella"
+            ></iframe>
+          </a>
+        </div>
+        <div class="contact-quick" style="margin-top: var(--space-lg);">
+          <p>T. <a href="tel:+34683602397">683 602 397</a></p>
+          <p><a href="mailto:info@clarella.cat">info@clarella.cat</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .page-hero-bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  .page-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .page-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .page-hero-title {
+    color: var(--color-text-light);
+    font-size: var(--text-6xl);
+    letter-spacing: 0.1em;
+  }
+
+  .events-intro {
+    font-size: var(--text-lg);
+    line-height: 1.8;
+  }
+
+  .events-cta-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    letter-spacing: 0.08em;
+    color: var(--color-accent-gold);
+  }
+
+  .experiences-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2xl);
+  }
+
+  .experience-card {
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-border-dark);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow var(--transition-base);
+  }
+
+  .experience-card:hover {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .experience-header {
+    background: var(--color-bg-dark);
+    padding: var(--space-lg) var(--space-xl);
+    text-align: center;
+  }
+
+  .experience-name {
+    color: var(--color-text-light);
+    font-size: var(--text-3xl);
+    letter-spacing: 0.1em;
+    margin: 0;
+  }
+
+  .experience-body {
+    padding: var(--space-xl);
+  }
+
+  .experience-features {
+    margin-bottom: var(--space-lg);
+  }
+
+  .experience-features li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--color-border-dark);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    position: relative;
+    padding-left: var(--space-md);
+  }
+
+  .experience-features li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent-gold);
+    font-weight: bold;
+  }
+
+  .experience-pricing {
+    margin-bottom: var(--space-lg);
+    text-align: center;
+  }
+
+  .price {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    margin: 0;
+    font-size: var(--text-sm);
+  }
+
+  .price-value {
+    font-weight: 600;
+    color: var(--color-text-dark);
+    font-size: var(--text-lg);
+  }
+
+  .experience-btn {
+    display: block;
+    text-align: center;
+  }
+
+  /* Info Grid */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+    text-align: center;
+  }
+
+  .info-label {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-sm);
+  }
+
+  .info-item p {
+    font-size: var(--text-sm);
+    margin: 0;
+  }
+
+  .info-item a {
+    color: var(--color-accent-gold);
+  }
+
+  /* Map */
+  .map-container {
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .contact-quick a {
+    color: var(--color-accent-gold);
+  }
+
+  @media (max-width: 768px) {
+    .experiences-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .page-hero-title {
+      font-size: var(--text-3xl);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .info-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

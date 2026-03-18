@@ -1,0 +1,266 @@
+/* ===== CLARELLA — Global Design System ===== */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+/* --- CSS Custom Properties --- */
+:root {
+  /* Colors */
+  --color-bg-dark: #1a1a1a;
+  --color-bg-darker: #111111;
+  --color-bg-light: #f5f3ef;
+  --color-bg-cream: #faf8f5;
+  --color-bg-white: #ffffff;
+  --color-text-dark: #1a1a1a;
+  --color-text-light: #f5f3ef;
+  --color-text-muted: #8a8580;
+  --color-text-body: #4a4540;
+  --color-accent-gold: #b8964e;
+  --color-accent-wine: #722f37;
+  --color-border-light: rgba(255, 255, 255, 0.15);
+  --color-border-dark: rgba(0, 0, 0, 0.1);
+  --color-overlay: rgba(0, 0, 0, 0.45);
+  --color-overlay-heavy: rgba(0, 0, 0, 0.6);
+
+  /* Typography */
+  --font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Font Sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 8rem;
+
+  /* Layout */
+  --max-width: 1200px;
+  --max-width-narrow: 800px;
+  --max-width-wide: 1400px;
+  --header-height: 80px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-text-body);
+  background-color: var(--color-bg-white);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-text-dark);
+}
+
+h1 { font-size: var(--text-6xl); }
+h2 { font-size: var(--text-4xl); letter-spacing: 0.08em; }
+h3 { font-size: var(--text-3xl); }
+h4 { font-size: var(--text-2xl); }
+
+p {
+  margin-bottom: var(--space-md);
+  line-height: 1.8;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* --- Layout Utilities --- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.container--narrow {
+  max-width: var(--max-width-narrow);
+}
+
+.container--wide {
+  max-width: var(--max-width-wide);
+}
+
+.section {
+  padding: var(--space-4xl) 0;
+}
+
+.section--dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+}
+
+.section--dark h2,
+.section--dark h3,
+.section--dark h4 {
+  color: var(--color-text-light);
+}
+
+.section--cream {
+  background-color: var(--color-bg-cream);
+}
+
+/* --- Decorative Elements --- */
+.separator {
+  display: block;
+  margin: var(--space-xl) auto;
+  max-width: 475px;
+  opacity: 0.6;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 0.875rem 2.5rem;
+  border: 1px solid;
+  transition: all var(--transition-base);
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn--outline-light {
+  color: var(--color-text-light);
+  border-color: var(--color-text-light);
+  background: transparent;
+}
+
+.btn--outline-light:hover {
+  background: var(--color-text-light);
+  color: var(--color-text-dark);
+}
+
+.btn--outline-dark {
+  color: var(--color-text-dark);
+  border-color: var(--color-text-dark);
+  background: transparent;
+}
+
+.btn--outline-dark:hover {
+  background: var(--color-text-dark);
+  color: var(--color-text-light);
+}
+
+.btn--gold {
+  color: var(--color-bg-white);
+  background: var(--color-accent-gold);
+  border-color: var(--color-accent-gold);
+}
+
+.btn--gold:hover {
+  background: #a07e3f;
+  border-color: #a07e3f;
+}
+
+/* --- Scroll Reveal Animation --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  h1 { font-size: var(--text-5xl); }
+  h2 { font-size: var(--text-3xl); }
+  .section { padding: var(--space-3xl) 0; }
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: var(--text-4xl); }
+  h2 { font-size: var(--text-2xl); }
+  h3 { font-size: var(--text-xl); }
+  .section { padding: var(--space-2xl) 0; }
+  .container { padding: 0 var(--space-md); }
+  :root { --header-height: 65px; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: var(--text-3xl); }
+  h2 { font-size: var(--text-xl); }
+}

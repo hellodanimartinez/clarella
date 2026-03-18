@@ -1,0 +1,180 @@
+---
+import { type Lang, useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div class="cookie-consent" id="cookie-consent">
+  <div class="cookie-inner">
+    <div class="cookie-header">
+      <h3 class="cookie-title">{t('cookie.title')}</h3>
+      <button class="cookie-close" id="cookie-close" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <p class="cookie-text">{t('cookie.text')}</p>
+    <div class="cookie-actions">
+      <button class="cookie-btn cookie-btn--accept" id="cookie-accept">{t('cookie.accept')}</button>
+      <button class="cookie-btn cookie-btn--deny" id="cookie-deny">{t('cookie.deny')}</button>
+    </div>
+    <div class="cookie-links">
+      <a href="/politica-de-cookies">{t('cookie.policyLink')}</a>
+      <a href="/politica-de-privacitat">{t('cookie.privacyLink')}</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cookie-consent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 1;
+    transition: opacity var(--transition-base);
+  }
+
+  .cookie-consent.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .cookie-inner {
+    background: var(--color-bg-white);
+    border-radius: 4px;
+    padding: var(--space-2xl);
+    max-width: 520px;
+    width: 90%;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .cookie-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-md);
+  }
+
+  .cookie-title {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-text-dark);
+  }
+
+  .cookie-close {
+    color: var(--color-text-muted);
+    padding: 0.25rem;
+    transition: color var(--transition-fast);
+  }
+
+  .cookie-close:hover {
+    color: var(--color-text-dark);
+  }
+
+  .cookie-text {
+    font-size: var(--text-sm);
+    color: var(--color-text-body);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+  }
+
+  .cookie-actions {
+    display: flex;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+  }
+
+  .cookie-btn {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 1px solid;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+  }
+
+  .cookie-btn--accept {
+    background: #666;
+    color: white;
+    border-color: #666;
+  }
+
+  .cookie-btn--accept:hover {
+    background: #555;
+  }
+
+  .cookie-btn--deny {
+    background: transparent;
+    color: var(--color-text-body);
+    border-color: #ccc;
+  }
+
+  .cookie-btn--deny:hover {
+    background: #f5f5f5;
+  }
+
+  .cookie-links {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+  }
+
+  .cookie-links a {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    text-decoration: underline;
+  }
+
+  .cookie-links a:hover {
+    color: var(--color-text-dark);
+  }
+</style>
+
+<script>
+  const consent = document.getElementById('cookie-consent');
+  const acceptBtn = document.getElementById('cookie-accept');
+  const denyBtn = document.getElementById('cookie-deny');
+  const closeBtn = document.getElementById('cookie-close');
+
+  // Check if consent already given
+  if (localStorage.getItem('cookie-consent')) {
+    consent?.classList.add('hidden');
+  }
+
+  function hideConsent() {
+    consent?.classList.add('hidden');
+  }
+
+  acceptBtn?.addEventListener('click', () => {
+    localStorage.setItem('cookie-consent', 'accepted');
+    hideConsent();
+  });
+
+  denyBtn?.addEventListener('click', () => {
+    localStorage.setItem('cookie-consent', 'denied');
+    hideConsent();
+  });
+
+  closeBtn?.addEventListener('click', () => {
+    hideConsent();
+  });
+</script>
