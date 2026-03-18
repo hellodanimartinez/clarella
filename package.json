@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "clarella",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "deploy": "astro build && wrangler pages deploy dist",
     "preview": "astro preview",
     "astro": "astro",
     "generate-types": "wrangler types"
